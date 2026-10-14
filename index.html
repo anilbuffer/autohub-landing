@@ -353,104 +353,126 @@
       <div class="container network-grid">
         <!-- Left Column: Copy & Action -->
         <div class="network-info" data-animate="fade-right">
-          <span class="eyebrow">— OUR GLOBAL NETWORK</span>
-          <h2 class="section-title">Connecting Vehicle <span class="font-normal">Markets</span> worldwide</h2>
-          <p class="section-desc">
-            With local teams and trusted partners, we move vehicles across key global routes — making international shipping simpler, faster and more reliable.
+          <span class="eyebrow"><span class="eyebrow-dash">—</span> OUR GLOBAL NETWORK</span>
+          <h2 class="network-title">Connecting Vehicle<br>Markets worldwide</h2>
+          <p class="network-desc">
+            With local teams and trusted partners, we move vehicles across key global routes - making international shipping simpler, faster and more reliable.
           </p>
-          <a href="#services" class="btn btn-primary">
+          <a href="#services" class="btn btn-network-primary">
             <span>Explore Our Routes</span>
-            <svg class="icon icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
         </div>
 
         <!-- Center Column: Animated SVG World Map -->
         <div class="network-map-wrap" data-animate="zoom-in" id="networkMapContainer">
-          <svg class="world-map-svg" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Interactive world map showing global vehicle shipping routes">
+          <svg class="world-map-svg" viewBox="0 0 1000 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Interactive world map showing global vehicle shipping routes">
             <defs>
-              <!-- Map Dots Pattern / Gradients -->
-              <radialGradient id="pulseGrad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#E31E24" stop-opacity="0.8"/>
+              <!-- Hub Node Glow Radial Gradient -->
+              <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E31E24" stop-opacity="0.9"/>
+                <stop offset="45%" stop-color="#E31E24" stop-opacity="0.3"/>
                 <stop offset="100%" stop-color="#E31E24" stop-opacity="0"/>
               </radialGradient>
-              <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#E31E24"/>
-                <stop offset="100%" stop-color="#B8141A"/>
-              </linearGradient>
             </defs>
 
-            <!-- Stylized Continents (Dotted / Polygons) -->
-            <g class="continents" fill="#E2E6EE" opacity="0.85">
+            <!-- Organic Stylized Continents Matching Reference -->
+            <g class="map-continents" fill="#9CB7CE" opacity="0.95">
               <!-- North America -->
-              <path d="M110,90 Q170,80 230,100 Q260,130 250,180 Q210,210 180,240 Q150,220 130,170 Q100,130 110,90 Z M190,260 Q240,260 270,300 Q240,320 200,290 Z"/>
+              <path class="map-continent" d="M65,75 C95,50 145,55 185,45 C230,40 270,60 280,95 C290,120 270,145 250,150 C265,175 255,200 230,220 C205,240 185,250 160,240 C140,230 130,205 115,190 C95,170 70,150 65,120 Z M165,245 C190,265 210,295 220,330 C195,335 175,305 165,245 Z M40,65 C60,50 85,60 80,85 C60,95 40,85 40,65 Z"/>
+              <!-- Greenland -->
+              <path class="map-continent" d="M300,35 C335,25 365,45 360,75 C345,95 315,95 300,75 Z"/>
               <!-- South America -->
-              <path d="M250,310 Q320,330 310,400 Q280,470 250,490 Q230,440 240,360 Z"/>
-              <!-- Europe & UK -->
-              <path d="M460,110 Q500,100 530,130 Q510,180 470,190 Q440,160 460,110 Z M440,115 Q465,100 455,145 Q435,135 440,115 Z"/>
+              <path class="map-continent" d="M215,290 C250,285 295,310 315,350 C325,390 300,435 270,480 C245,510 230,490 225,450 C220,410 200,370 205,330 Z"/>
+              <!-- Europe & Scandinavia -->
+              <path class="map-continent" d="M440,75 C460,55 490,55 510,75 C520,105 500,135 480,145 C455,150 440,120 440,75 Z M445,140 C475,140 495,160 490,185 C465,195 440,185 445,140 Z M420,115 C440,105 445,125 435,145 C420,150 415,130 420,115 Z"/>
               <!-- Africa -->
-              <path d="M460,220 Q540,210 560,290 Q530,400 480,420 Q440,330 450,250 Z"/>
+              <path class="map-continent" d="M430,195 C490,185 540,210 550,265 C560,320 535,385 490,420 C455,410 435,360 425,310 C415,260 410,215 430,195 Z M560,345 C575,340 575,370 560,375 Z"/>
               <!-- Asia -->
-              <path d="M570,100 Q720,80 840,130 Q800,240 730,270 Q660,250 590,200 Z"/>
-              <!-- Japan -->
-              <path d="M785,175 Q805,170 800,215 Q785,220 785,175 Z"/>
+              <path class="map-continent" d="M510,65 C590,45 720,40 820,80 C860,110 850,165 810,195 C770,215 745,245 715,280 C680,285 645,260 620,230 C585,225 555,185 520,170 C500,140 500,95 510,65 Z M625,230 C665,240 680,270 660,300 C635,310 615,280 625,230 Z"/>
+              <!-- Japan Archipelago -->
+              <path class="map-continent" d="M820,170 C835,165 845,185 840,210 C830,230 815,220 815,195 Z"/>
+              <!-- Southeast Asia & Malay -->
+              <path class="map-continent" d="M680,290 C710,290 715,315 690,325 Z M705,330 C735,325 745,345 720,355 Z M740,335 C780,330 780,355 750,360 Z"/>
               <!-- Australia -->
-              <path d="M740,340 Q840,330 860,400 Q800,450 730,420 Q720,370 740,340 Z"/>
+              <path class="map-continent" d="M720,350 C775,335 835,345 840,395 C845,435 810,465 755,455 C715,445 700,405 705,375 Z M795,470 C810,470 810,485 795,485 Z"/>
               <!-- New Zealand -->
-              <path d="M885,410 Q905,405 895,460 Q880,455 885,410 Z"/>
+              <path class="map-continent" d="M875,415 C890,410 890,435 875,440 Z M885,445 C900,440 895,475 880,470 Z"/>
             </g>
 
-            <!-- Curved Animated Route Paths -->
-            <!-- 1. Japan (795, 195) -> New Zealand (890, 430) -->
-            <path id="route-jp-nz" class="route-line" d="M795,195 C860,260 910,340 890,430" stroke="url(#routeGrad)" stroke-width="2.5" stroke-dasharray="8 6"/>
-            <!-- 2. Japan (795, 195) -> Australia (790, 375) -->
-            <path id="route-jp-au" class="route-line" d="M795,195 C820,260 810,310 790,375" stroke="url(#routeGrad)" stroke-width="2.5" stroke-dasharray="8 6"/>
-            <!-- 3. UK (450, 130) -> Singapore (690, 285) -->
-            <path id="route-uk-sg" class="route-line" d="M450,130 C530,200 610,240 690,285" stroke="url(#routeGrad)" stroke-width="2.5" stroke-dasharray="8 6"/>
-            <!-- 4. Singapore (690, 285) -> New Zealand (890, 430) -->
-            <path id="route-sg-nz" class="route-line" d="M690,285 C770,350 820,410 890,430" stroke="url(#routeGrad)" stroke-width="2.5" stroke-dasharray="8 6"/>
-            <!-- 5. Japan (795, 195) -> USA (210, 200) [Pacific Route] -->
-            <path id="route-jp-us" class="route-line" d="M795,195 C880,160 980,160 999,170" stroke="url(#routeGrad)" stroke-width="2.5" stroke-dasharray="8 6"/>
-            <path id="route-us-in" class="route-line" d="M0,175 C50,175 140,180 210,200" stroke="url(#routeGrad)" stroke-width="2.5" stroke-dasharray="8 6"/>
+            <!-- Red Dashed Shipping Route Arcs (Radiating gracefully) -->
+            <!-- 1. USA -> UK -->
+            <path class="route-line" d="M165,195 C265,115 375,105 470,135"/>
+            <!-- 2. UK -> Japan -->
+            <path class="route-line" d="M470,135 C580,65 730,85 825,190"/>
+            <!-- 3. UK -> Singapore -->
+            <path class="route-line" d="M470,135 C545,195 620,255 695,320"/>
+            <!-- 4. UK -> Australia -->
+            <path class="route-line" d="M470,135 C570,245 670,325 765,395"/>
+            <!-- 5. Japan -> Singapore -->
+            <path class="route-line" d="M825,190 C790,235 745,280 695,320"/>
+            <!-- 6. Japan -> Australia -->
+            <path class="route-line" d="M825,190 C830,265 815,340 765,395"/>
+            <!-- 7. Japan -> New Zealand -->
+            <path class="route-line" d="M825,190 C870,265 905,355 885,440"/>
+            <!-- 8. Singapore -> Australia -->
+            <path class="route-line" d="M695,320 C720,350 740,370 765,395"/>
+            <!-- 9. Australia -> New Zealand -->
+            <path class="route-line" d="M765,395 C810,410 845,420 885,440"/>
 
-            <!-- Pulsing Hub Nodes with Concentric Rings -->
-            <!-- JAPAN -->
-            <g class="map-node" transform="translate(795, 195)">
-              <circle class="pulse-ring" r="18" fill="url(#pulseGrad)"/>
-              <circle class="node-core" r="6" fill="#E31E24" stroke="#FFF" stroke-width="2"/>
-              <text x="12" y="4" class="node-label">JAPAN</text>
+            <!-- 6 Major Hub Nodes with Glowing Pulsing Rings & Dark Label Badges -->
+            <!-- 1. UK Hub -->
+            <g class="map-node" transform="translate(470, 135)">
+              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
+              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
+              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
+              <rect x="-14" y="-23" width="28" height="15" rx="3.5" fill="#0B132B"/>
+              <text x="0" y="-12" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">UK</text>
             </g>
-            <!-- NEW ZEALAND -->
-            <g class="map-node" transform="translate(890, 430)">
-              <circle class="pulse-ring" r="22" fill="url(#pulseGrad)"/>
-              <circle class="node-core" r="7" fill="#E31E24" stroke="#FFF" stroke-width="2"/>
-              <text x="14" y="5" class="node-label font-bold">NEW ZEALAND (HQ)</text>
+
+            <!-- 2. USA Hub -->
+            <g class="map-node" transform="translate(165, 195)">
+              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
+              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
+              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
+              <rect x="-34" y="-7" width="28" height="15" rx="3.5" fill="#0B132B"/>
+              <text x="-20" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">USA</text>
             </g>
-            <!-- AUSTRALIA -->
-            <g class="map-node" transform="translate(790, 375)">
-              <circle class="pulse-ring" r="16" fill="url(#pulseGrad)"/>
-              <circle class="node-core" r="5" fill="#E31E24" stroke="#FFF" stroke-width="2"/>
-              <text x="10" y="4" class="node-label">AUSTRALIA</text>
+
+            <!-- 3. JAPAN Hub -->
+            <g class="map-node" transform="translate(825, 190)">
+              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
+              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
+              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
+              <rect x="9" y="-7" width="34" height="15" rx="3.5" fill="#0B132B"/>
+              <text x="26" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">Japan</text>
             </g>
-            <!-- UNITED KINGDOM -->
-            <g class="map-node" transform="translate(450, 130)">
-              <circle class="pulse-ring" r="16" fill="url(#pulseGrad)"/>
-              <circle class="node-core" r="5.5" fill="#E31E24" stroke="#FFF" stroke-width="2"/>
-              <text x="-12" y="-10" text-anchor="end" class="node-label">UNITED KINGDOM</text>
+
+            <!-- 4. SINGAPORE Hub -->
+            <g class="map-node" transform="translate(695, 320)">
+              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
+              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
+              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
+              <rect x="-56" y="-7" width="48" height="15" rx="3.5" fill="#0B132B"/>
+              <text x="-32" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">Singapore</text>
             </g>
-            <!-- USA -->
-            <g class="map-node" transform="translate(210, 200)">
-              <circle class="pulse-ring" r="16" fill="url(#pulseGrad)"/>
-              <circle class="node-core" r="5.5" fill="#E31E24" stroke="#FFF" stroke-width="2"/>
-              <text x="-10" y="4" text-anchor="end" class="node-label">USA</text>
+
+            <!-- 5. AUSTRALIA Hub -->
+            <g class="map-node" transform="translate(765, 395)">
+              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
+              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
+              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
+              <rect x="-48" y="-7" width="42" height="15" rx="3.5" fill="#0B132B"/>
+              <text x="-27" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">Australia</text>
             </g>
-            <!-- SINGAPORE -->
-            <g class="map-node" transform="translate(690, 285)">
-              <circle class="pulse-ring" r="15" fill="url(#pulseGrad)"/>
-              <circle class="node-core" r="5" fill="#E31E24" stroke="#FFF" stroke-width="2"/>
-              <text x="10" y="14" class="node-label">SINGAPORE</text>
+
+            <!-- 6. NEW ZEALAND Hub -->
+            <g class="map-node" transform="translate(885, 440)">
+              <circle cx="0" cy="0" r="18" fill="url(#hubGlow)" class="node-pulse-ring"/>
+              <circle cx="0" cy="0" r="9" fill="#E31E24" opacity="0.35"/>
+              <circle cx="0" cy="0" r="5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
+              <rect x="-26" y="8" width="52" height="15" rx="3.5" fill="#0B132B"/>
+              <text x="0" y="19" fill="#FFFFFF" font-size="8" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">New Zealand</text>
             </g>
           </svg>
         </div>
@@ -458,54 +480,108 @@
         <!-- Right Column: 6 Country Cards -->
         <div class="network-countries-card" data-animate="fade-left">
           <ul class="country-list" role="list">
-            <li class="country-item" style="--stagger: 1">
-              <div class="country-flag flag-jp" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#FFF" stroke="#E8E8EC"/><circle cx="16" cy="16" r="7" fill="#BC002D"/></svg>
+            <li class="country-item">
+              <div class="country-flag" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+                  <circle cx="16" cy="16" r="15" fill="#FFFFFF" stroke="#E2E8F0"/>
+                  <circle cx="16" cy="16" r="6.5" fill="#BC002D"/>
+                </svg>
               </div>
               <div class="country-text">
                 <strong class="country-name">Japan</strong>
                 <span class="country-desc">Import from Japan</span>
               </div>
             </li>
-            <li class="country-item" style="--stagger: 2">
-              <div class="country-flag flag-nz" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#00247D"/><path d="M4 6 L12 14 M4 14 L12 6" stroke="#FFF" stroke-width="2"/><circle cx="23" cy="10" r="1.5" fill="#E31E24" stroke="#FFF" stroke-width="0.5"/><circle cx="21" cy="18" r="1.5" fill="#E31E24" stroke="#FFF" stroke-width="0.5"/><circle cx="25" cy="22" r="1.5" fill="#E31E24" stroke="#FFF" stroke-width="0.5"/></svg>
+            <li class="country-item">
+              <div class="country-flag" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+                  <circle cx="16" cy="16" r="15" fill="#00247D"/>
+                  <path d="M1 3.5 L15 14 M1 14 L15 3.5" stroke="#FFF" stroke-width="2"/>
+                  <path d="M8 1 V15 M1 8 H15" stroke="#FFF" stroke-width="3"/>
+                  <path d="M8 1 V15 M1 8 H15" stroke="#CC142B" stroke-width="1.8"/>
+                  <!-- Southern Cross 4 Red Stars with White Border -->
+                  <circle cx="23" cy="9" r="1.6" fill="#CC142B" stroke="#FFF" stroke-width="0.6"/>
+                  <circle cx="19.5" cy="16.5" r="1.6" fill="#CC142B" stroke="#FFF" stroke-width="0.6"/>
+                  <circle cx="26.5" cy="16.5" r="1.6" fill="#CC142B" stroke="#FFF" stroke-width="0.6"/>
+                  <circle cx="23" cy="23.5" r="1.8" fill="#CC142B" stroke="#FFF" stroke-width="0.6"/>
+                </svg>
               </div>
               <div class="country-text">
                 <strong class="country-name">New Zealand</strong>
                 <span class="country-desc">Local support &amp; delivery</span>
               </div>
             </li>
-            <li class="country-item" style="--stagger: 3">
-              <div class="country-flag flag-au" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#00008B"/><circle cx="10" cy="22" r="3" fill="#FFF"/><circle cx="22" cy="12" r="1.5" fill="#FFF"/><circle cx="24" cy="20" r="1.5" fill="#FFF"/></svg>
+            <li class="country-item">
+              <div class="country-flag" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+                  <circle cx="16" cy="16" r="15" fill="#00008B"/>
+                  <path d="M1 3.5 L15 14 M1 14 L15 3.5" stroke="#FFF" stroke-width="2"/>
+                  <path d="M8 1 V15 M1 8 H15" stroke="#FFF" stroke-width="3"/>
+                  <path d="M8 1 V15 M1 8 H15" stroke="#E31E24" stroke-width="1.8"/>
+                  <!-- Commonwealth Star -->
+                  <circle cx="8" cy="22" r="3" fill="#FFF"/>
+                  <!-- Southern Cross White Stars -->
+                  <circle cx="24" cy="9" r="1.4" fill="#FFF"/>
+                  <circle cx="20" cy="15" r="1.4" fill="#FFF"/>
+                  <circle cx="27" cy="15" r="1.4" fill="#FFF"/>
+                  <circle cx="23.5" cy="23" r="1.6" fill="#FFF"/>
+                  <circle cx="25" cy="18.5" r="0.9" fill="#FFF"/>
+                </svg>
               </div>
               <div class="country-text">
                 <strong class="country-name">Australia</strong>
                 <span class="country-desc">Import &amp; export</span>
               </div>
             </li>
-            <li class="country-item" style="--stagger: 4">
-              <div class="country-flag flag-uk" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#012169"/><path d="M4 4 L28 28 M4 28 L28 4" stroke="#FFF" stroke-width="3"/><path d="M4 4 L28 28 M4 28 L28 4" stroke="#C8102E" stroke-width="1.5"/><path d="M16 2 V30 M2 16 H30" stroke="#FFF" stroke-width="5"/><path d="M16 2 V30 M2 16 H30" stroke="#C8102E" stroke-width="3"/></svg>
+            <li class="country-item">
+              <div class="country-flag" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+                  <circle cx="16" cy="16" r="15" fill="#012169"/>
+                  <!-- Diagonal White & Red -->
+                  <path d="M2 2 L30 30 M2 30 L30 2" stroke="#FFF" stroke-width="4"/>
+                  <path d="M2 2 L30 30 M2 30 L30 2" stroke="#C8102E" stroke-width="2"/>
+                  <!-- Cross White & Red -->
+                  <path d="M16 1 V31 M1 16 H31" stroke="#FFF" stroke-width="6"/>
+                  <path d="M16 1 V31 M1 16 H31" stroke="#C8102E" stroke-width="3.5"/>
+                </svg>
               </div>
               <div class="country-text">
                 <strong class="country-name">United Kingdom</strong>
-                <span class="country-desc">Export &amp; import</span>
+                <span class="country-desc">Import &amp; export</span>
               </div>
             </li>
-            <li class="country-item" style="--stagger: 5">
-              <div class="country-flag flag-us" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#B22234"/><rect x="1" y="6" width="30" height="4" fill="#FFF"/><rect x="1" y="14" width="30" height="4" fill="#FFF"/><rect x="1" y="22" width="30" height="4" fill="#FFF"/><rect x="1" y="1" width="15" height="15" fill="#3C3B6E"/></svg>
+            <li class="country-item">
+              <div class="country-flag" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+                  <circle cx="16" cy="16" r="15" fill="#B22234"/>
+                  <path d="M1 8 H31 M1 14 H31 M1 20 H31 M1 26 H31" stroke="#FFF" stroke-width="2.5"/>
+                  <rect x="1" y="1" width="15" height="15" fill="#3C3B6E"/>
+                  <circle cx="5" cy="5" r="1" fill="#FFF"/>
+                  <circle cx="11" cy="5" r="1" fill="#FFF"/>
+                  <circle cx="8" cy="8.5" r="1" fill="#FFF"/>
+                  <circle cx="5" cy="12" r="1" fill="#FFF"/>
+                  <circle cx="11" cy="12" r="1" fill="#FFF"/>
+                </svg>
               </div>
               <div class="country-text">
                 <strong class="country-name">USA</strong>
                 <span class="country-desc">Japan to USA</span>
               </div>
             </li>
-            <li class="country-item" style="--stagger: 6">
-              <div class="country-flag flag-sg" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#ED2939"/><path d="M1 16 Q1 31 16 31 Q31 31 31 16 Z" fill="#FFF"/><circle cx="9" cy="9" r="4" fill="#FFF"/><circle cx="10.5" cy="9" r="3.5" fill="#ED2939"/></svg>
+            <li class="country-item">
+              <div class="country-flag" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+                  <circle cx="16" cy="16" r="15" fill="#ED2939"/>
+                  <path d="M1 16 A 15 15 0 0 0 31 16 Z" fill="#FFFFFF"/>
+                  <!-- Crescent and stars in red half -->
+                  <circle cx="8.5" cy="8.5" r="4.2" fill="#FFFFFF"/>
+                  <circle cx="10" cy="8.5" r="3.7" fill="#ED2939"/>
+                  <circle cx="12" cy="6" r="0.7" fill="#FFFFFF"/>
+                  <circle cx="13.5" cy="8" r="0.7" fill="#FFFFFF"/>
+                  <circle cx="12" cy="10" r="0.7" fill="#FFFFFF"/>
+                  <circle cx="10" cy="11" r="0.7" fill="#FFFFFF"/>
+                  <circle cx="10" cy="5" r="0.7" fill="#FFFFFF"/>
+                </svg>
               </div>
               <div class="country-text">
                 <strong class="country-name">Singapore</strong>
@@ -516,66 +592,49 @@
         </div>
       </div>
 
-      <!-- SECTION 3.5: STATS CARD (Overlaps boundary) -->
+      <!-- SECTION 3.5: STATS CARD -->
       <div class="container stats-container" data-animate="fade-up">
         <div class="stats-card">
           <div class="stat-col">
             <div class="stat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="3" width="15" height="13"/>
-                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                <circle cx="5.5" cy="18.5" r="2.5"/>
-                <circle cx="18.5" cy="18.5" r="2.5"/>
-              </svg>
+              <img src="assets/icon-shipped-truck.png" alt="Cars shipped" class="stat-icon-img" width="32" height="32">
             </div>
             <div class="stat-info">
               <span class="stat-number"><span class="stat-counter" data-target="960000">0</span>+</span>
-              <span class="stat-label">Cars shipped worldwide</span>
+              <span class="stat-label">Cars shipped<br>worldwide</span>
             </div>
           </div>
           <div class="stat-divider" aria-hidden="true"></div>
 
           <div class="stat-col">
             <div class="stat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
+              <img src="assets/icon-countries-globe.png" alt="Countries with local teams" class="stat-icon-img" width="32" height="32">
             </div>
             <div class="stat-info">
               <span class="stat-number"><span class="stat-counter" data-target="6">0</span>+</span>
-              <span class="stat-label">Countries with local teams</span>
+              <span class="stat-label">Countries with<br>local teams</span>
             </div>
           </div>
           <div class="stat-divider" aria-hidden="true"></div>
 
           <div class="stat-col">
             <div class="stat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
+              <img src="assets/icon-experience-trophy.png" alt="Years of experience" class="stat-icon-img" width="32" height="32">
             </div>
             <div class="stat-info">
               <span class="stat-number"><span class="stat-counter" data-target="15">0</span>+</span>
-              <span class="stat-label">Years of experience</span>
+              <span class="stat-label">Years of<br>experience</span>
             </div>
           </div>
           <div class="stat-divider" aria-hidden="true"></div>
 
           <div class="stat-col">
             <div class="stat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
+              <img src="assets/icon-customers-stars.png" alt="Happy Customers" class="stat-icon-img" width="32" height="32">
             </div>
             <div class="stat-info">
               <span class="stat-number"><span class="stat-counter" data-target="10000">0</span>+</span>
-              <span class="stat-label">Happy Customers worldwide</span>
+              <span class="stat-label">Happy Customers<br>worldwide</span>
             </div>
           </div>
         </div>
@@ -630,66 +689,49 @@
     </section>
 
     <!-- SECTION 3.7: SERVICES -->
-    <section id="services" class="services-section bg-alt" aria-label="Our Core Vehicle Logistics Services">
+    <section id="services" class="services-section" aria-label="Our Core Vehicle Logistics Services">
       <div class="container">
         <div class="services-header" data-animate="fade-up">
           <div class="services-header__left">
-            <span class="eyebrow">— SERVICES</span>
-            <h2 class="section-title">Complete Vehicle Logistics Solutions</h2>
-            <p class="section-desc">
+            <span class="services-eyebrow"><span class="eyebrow-dash">—</span> SERVICES</span>
+            <h2 class="services-title">Complete Vehicle Logistics Solutions</h2>
+            <p class="services-desc">
               From shipping to compliance, finance and documentation, we provide end-to-end solutions to make international vehicle logistics simple, secure and stress-free.
             </p>
           </div>
           <div class="services-header__right">
-            <a href="#contact" class="btn btn-outline">
+            <a href="#contact" class="btn-services-all">
               <span>View all services</span>
-              <svg class="icon icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+              <span class="btn-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
 
         <div class="services-grid">
-          <!-- Card 1 -->
+          <!-- Card 1: Vehicle Shipping -->
           <article class="service-card" data-animate="fade-up" style="--stagger: 1">
             <div class="service-card__image-wrap">
-              <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Vehicle Shipping on carrier transporter" class="service-card__img" loading="lazy">
+              <img src="assets/service-img-shipping-hd.jpg" alt="Vehicle Shipping loaded on carrier transporter" class="service-card__img" loading="lazy">
               <div class="service-card__badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="1" y="3" width="15" height="13"/>
-                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                  <circle cx="5.5" cy="18.5" r="2.5"/>
-                  <circle cx="18.5" cy="18.5" r="2.5"/>
-                </svg>
+                <img src="assets/service-icon-shipping.png" alt="Vehicle Shipping" class="service-card__badge-icon" width="24" height="24">
               </div>
             </div>
             <div class="service-card__body">
               <h3 class="service-card__title">Vehicle Shipping</h3>
-              <p class="service-card__desc">Safe and reliable vehicle shipping with door-to-door service.</p>
+              <p class="service-card__desc">Safe and reliable global vehicle shipping with door-to-door service.</p>
               <a href="#quote" class="service-card__link">
                 <span>Learn more</span>
-                <svg class="icon icon-arrow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="service-card__arrow-circle" aria-hidden="true">→</span>
               </a>
             </div>
           </article>
 
-          <!-- Card 2 -->
+          <!-- Card 2: Ex UK VAT Removal -->
           <article class="service-card" data-animate="fade-up" style="--stagger: 2">
             <div class="service-card__image-wrap">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" alt="Ex UK VAT Removal paperwork and calculation" class="service-card__img" loading="lazy">
+              <img src="assets/service-img-vat-hd.jpg" alt="Ex UK VAT Removal calculations and paperwork" class="service-card__img" loading="lazy">
               <div class="service-card__badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
+                <img src="assets/service-icon-vat.png" alt="Ex UK VAT Removal" class="service-card__badge-icon" width="24" height="24">
               </div>
             </div>
             <div class="service-card__body">
@@ -697,26 +739,17 @@
               <p class="service-card__desc">We handle the export process and VAT removal for eligible vehicles.</p>
               <a href="#quote" class="service-card__link">
                 <span>Learn more</span>
-                <svg class="icon icon-arrow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="service-card__arrow-circle" aria-hidden="true">→</span>
               </a>
             </div>
           </article>
 
-          <!-- Card 3 -->
+          <!-- Card 3: Ex UK Transit Finance -->
           <article class="service-card" data-animate="fade-up" style="--stagger: 3">
             <div class="service-card__image-wrap">
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Ex UK Transit Finance handshake and keys" class="service-card__img" loading="lazy">
+              <img src="assets/service-img-finance-hd.jpg" alt="Ex UK Transit Finance vehicle keys handover" class="service-card__img" loading="lazy">
               <div class="service-card__badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/>
-                  <line x1="2" y1="10" x2="22" y2="10"/>
-                  <circle cx="7" cy="15" r="1"/>
-                  <circle cx="12" cy="15" r="1"/>
-                  <circle cx="17" cy="15" r="1"/>
-                </svg>
+                <img src="assets/service-icon-finance.png" alt="Ex UK Transit Finance" class="service-card__badge-icon" width="24" height="24">
               </div>
             </div>
             <div class="service-card__body">
@@ -724,35 +757,25 @@
               <p class="service-card__desc">Flexible transit finance solutions to help you move vehicles with ease.</p>
               <a href="#quote" class="service-card__link">
                 <span>Learn more</span>
-                <svg class="icon icon-arrow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="service-card__arrow-circle" aria-hidden="true">→</span>
               </a>
             </div>
           </article>
 
-          <!-- Card 4 -->
+          <!-- Card 4: Roll-on Roll- Off Shipping NZ -->
           <article class="service-card" data-animate="fade-up" style="--stagger: 4">
             <div class="service-card__image-wrap">
-              <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Roll-on Roll-off RoRo cargo ship" class="service-card__img" loading="lazy">
+              <img src="assets/service-img-roro-hd.jpg" alt="Roll-on Roll- Off Shipping NZ vehicles at port" class="service-card__img" loading="lazy">
               <div class="service-card__badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1"/>
-                  <path d="M4 17l1-8h14l1 8"/>
-                  <path d="M7 9V5h10v4"/>
-                </svg>
+                <img src="assets/service-icon-roro.png" alt="Roll-on Roll- Off Shipping NZ" class="service-card__badge-icon" width="24" height="24">
               </div>
             </div>
             <div class="service-card__body">
               <h3 class="service-card__title">Roll-on Roll- Off Shipping NZ</h3>
-              <p class="service-card__desc">Cost-effective and secure roll-on roll-off shipping for your chosen destination.</p>
+              <p class="service-card__desc">Cost-effective and secure roll-on-roll-off shipping for New Zealand.</p>
               <a href="#quote" class="service-card__link">
                 <span>Learn more</span>
-                <svg class="icon icon-arrow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="service-card__arrow-circle" aria-hidden="true">→</span>
               </a>
             </div>
           </article>
