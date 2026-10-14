@@ -74,15 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   // Smooth scroll to top
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', (e) => {
+  const backToTopTrigger = document.getElementById('backToTopTrigger');
+  const scrollElements = [backToTopBtn, backToTopTrigger].filter(Boolean);
+  scrollElements.forEach(el => {
+    el.addEventListener('click', (e) => {
       e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: prefersReducedMotion ? 'auto' : 'smooth'
       });
     });
-  }
+  });
 
   /* --------------------------------------------------------------------------
      2. PARALLAX EFFECT FOR [data-parallax]
@@ -630,5 +632,122 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     handleScroll();
   }, 200);
+
+  /* --------------------------------------------------------------------------
+     13. LANGUAGE SELECTOR DROPDOWN
+     -------------------------------------------------------------------------- */
+  const langWrapper = document.getElementById('languageDropdownWrapper');
+  const langTriggerBtn = document.getElementById('languageSelectorBtn');
+  const langDropdownMenu = document.getElementById('languageDropdownMenu');
+  const currentLangFlag = document.getElementById('currentLangFlag');
+  const currentLangText = document.getElementById('currentLangText');
+  const mobileLangBtns = document.querySelectorAll('.mobile-lang-btn');
+
+  const langFlags = {
+    en: `<svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+          <clipPath id="curUkClip"><circle cx="16" cy="16" r="16"/></clipPath>
+          <g clip-path="url(#curUkClip)">
+            <rect width="32" height="32" fill="#012169"/>
+            <path d="M0 0 L32 32 M32 0 L0 32" stroke="#FFFFFF" stroke-width="4.5"/>
+            <path d="M0 0 L32 32 M32 0 L0 32" stroke="#C8102E" stroke-width="2.5"/>
+            <path d="M16 0 V32 M0 16 H32" stroke="#FFFFFF" stroke-width="7"/>
+            <path d="M16 0 V32 M0 16 H32" stroke="#C8102E" stroke-width="4"/>
+          </g>
+        </svg>`,
+    ja: `<svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+          <circle cx="16" cy="16" r="15" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+          <circle cx="16" cy="16" r="6.8" fill="#BC002D"/>
+        </svg>`
+  };
+
+  const langLabels = {
+    en: 'English',
+    ja: 'サイト'
+  };
+
+  function setLanguage(lang) {
+    if (!langFlags[lang]) return;
+
+    if (currentLangFlag) currentLangFlag.innerHTML = langFlags[lang];
+    if (currentLangText) currentLangText.textContent = langLabels[lang];
+
+    if (langDropdownMenu) {
+      langDropdownMenu.querySelectorAll('.language-option').forEach(opt => {
+        const isSelected = opt.dataset.lang === lang;
+        opt.classList.toggle('is-active', isSelected);
+        opt.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+      });
+    }
+
+    mobileLangBtns.forEach(btn => {
+      btn.classList.toggle('is-active', btn.dataset.lang === lang);
+    });
+
+    try {
+      localStorage.setItem('autohub_selected_lang', lang);
+    } catch (e) {}
+  }
+
+  function toggleDropdown(forceState) {
+    if (!langDropdownMenu || !langTriggerBtn) return;
+    const isCurrentlyOpen = langDropdownMenu.classList.contains('is-open');
+    const nextState = forceState !== undefined ? forceState : !isCurrentlyOpen;
+    langDropdownMenu.classList.toggle('is-open', nextState);
+    langTriggerBtn.setAttribute('aria-expanded', nextState ? 'true' : 'false');
+  }
+
+  if (langTriggerBtn) {
+    langTriggerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+  }
+
+  if (langDropdownMenu) {
+    langDropdownMenu.querySelectorAll('.language-option').forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const selectedLang = opt.dataset.lang;
+        setLanguage(selectedLang);
+        toggleDropdown(false);
+      });
+
+      opt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const selectedLang = opt.dataset.lang;
+          setLanguage(selectedLang);
+          toggleDropdown(false);
+        }
+      });
+    });
+  }
+
+  mobileLangBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLang = btn.dataset.lang;
+      setLanguage(selectedLang);
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (langWrapper && !langWrapper.contains(e.target)) {
+      toggleDropdown(false);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      toggleDropdown(false);
+    }
+  });
+
+  // Restore saved choice if exists
+  try {
+    const savedLang = localStorage.getItem('autohub_selected_lang');
+    if (savedLang && langFlags[savedLang]) {
+      setLanguage(savedLang);
+    }
+  } catch (e) {}
 
 });

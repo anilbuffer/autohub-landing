@@ -55,14 +55,58 @@
         <span class="top-bar__divider" aria-hidden="true">|</span>
         <a href="#register" class="top-bar__link">Register</a>
         <span class="top-bar__divider" aria-hidden="true">|</span>
-        <div class="language-selector" aria-label="Language selection">
-          <span class="flag-jp-circle" aria-hidden="true">
-            <svg viewBox="0 0 20 20" width="16" height="16" fill="none">
-              <circle cx="10" cy="10" r="9.5" fill="#FFFFFF"/>
-              <circle cx="10" cy="10" r="4.2" fill="#BC002D"/>
+        <div class="language-dropdown-wrapper" id="languageDropdownWrapper">
+          <button type="button" class="language-selector-btn" id="languageSelectorBtn" aria-expanded="false" aria-haspopup="listbox" aria-label="Select website language">
+            <span class="flag-circle" id="currentLangFlag" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+                <clipPath id="curUkClip"><circle cx="16" cy="16" r="16"/></clipPath>
+                <g clip-path="url(#curUkClip)">
+                  <rect width="32" height="32" fill="#012169"/>
+                  <path d="M0 0 L32 32 M32 0 L0 32" stroke="#FFFFFF" stroke-width="4.5"/>
+                  <path d="M0 0 L32 32 M32 0 L0 32" stroke="#C8102E" stroke-width="2.5"/>
+                  <path d="M16 0 V32 M0 16 H32" stroke="#FFFFFF" stroke-width="7"/>
+                  <path d="M16 0 V32 M0 16 H32" stroke="#C8102E" stroke-width="4"/>
+                </g>
+              </svg>
+            </span>
+            <span class="lang-text" id="currentLangText">English</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </span>
-          <span class="lang-text">サイト</span>
+          </button>
+          
+          <ul class="language-dropdown-menu" id="languageDropdownMenu" role="listbox" aria-label="Available languages">
+            <li class="language-option is-active" role="option" aria-selected="true" data-lang="en" tabindex="0">
+              <span class="flag-circle" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+                  <clipPath id="optUkClip"><circle cx="16" cy="16" r="16"/></clipPath>
+                  <g clip-path="url(#optUkClip)">
+                    <rect width="32" height="32" fill="#012169"/>
+                    <path d="M0 0 L32 32 M32 0 L0 32" stroke="#FFFFFF" stroke-width="4.5"/>
+                    <path d="M0 0 L32 32 M32 0 L0 32" stroke="#C8102E" stroke-width="2.5"/>
+                    <path d="M16 0 V32 M0 16 H32" stroke="#FFFFFF" stroke-width="7"/>
+                    <path d="M16 0 V32 M0 16 H32" stroke="#C8102E" stroke-width="4"/>
+                  </g>
+                </svg>
+              </span>
+              <span class="lang-option-name">English</span>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </li>
+            <li class="language-option" role="option" aria-selected="false" data-lang="ja" tabindex="0">
+              <span class="flag-circle" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+                  <circle cx="16" cy="16" r="15" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+                  <circle cx="16" cy="16" r="6.8" fill="#BC002D"/>
+                </svg>
+              </span>
+              <span class="lang-option-name">日本語 (サイト)</span>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -245,6 +289,35 @@
         <li><a href="#faq" class="mobile-nav-link">FAQs</a></li>
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
       </ul>
+      <div class="mobile-lang-switch">
+        <span class="mobile-lang-label">Language:</span>
+        <div class="mobile-lang-options">
+          <button type="button" class="mobile-lang-btn is-active" data-lang="en">
+            <span class="flag-circle" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+                <clipPath id="mUkClip"><circle cx="16" cy="16" r="16"/></clipPath>
+                <g clip-path="url(#mUkClip)">
+                  <rect width="32" height="32" fill="#012169"/>
+                  <path d="M0 0 L32 32 M32 0 L0 32" stroke="#FFFFFF" stroke-width="4.5"/>
+                  <path d="M0 0 L32 32 M32 0 L0 32" stroke="#C8102E" stroke-width="2.5"/>
+                  <path d="M16 0 V32 M0 16 H32" stroke="#FFFFFF" stroke-width="7"/>
+                  <path d="M16 0 V32 M0 16 H32" stroke="#C8102E" stroke-width="4"/>
+                </g>
+              </svg>
+            </span>
+            <span>English</span>
+          </button>
+          <button type="button" class="mobile-lang-btn" data-lang="ja">
+            <span class="flag-circle" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+                <circle cx="16" cy="16" r="15" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+                <circle cx="16" cy="16" r="6.8" fill="#BC002D"/>
+              </svg>
+            </span>
+            <span>日本語</span>
+          </button>
+        </div>
+      </div>
       <div class="mobile-drawer__cta">
         <a href="#quote" class="btn btn-primary btn-block">
           <span>Get a Quote</span>
@@ -364,117 +437,9 @@
           </a>
         </div>
 
-        <!-- Center Column: Animated SVG World Map -->
+        <!-- Center Column: Global Shipping Routes Map Image -->
         <div class="network-map-wrap" data-animate="zoom-in" id="networkMapContainer">
-          <svg class="world-map-svg" viewBox="0 0 1000 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Interactive world map showing global vehicle shipping routes">
-            <defs>
-              <!-- Hub Node Glow Radial Gradient -->
-              <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#E31E24" stop-opacity="0.9"/>
-                <stop offset="45%" stop-color="#E31E24" stop-opacity="0.3"/>
-                <stop offset="100%" stop-color="#E31E24" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-
-            <!-- Organic Stylized Continents Matching Reference -->
-            <g class="map-continents" fill="#9CB7CE" opacity="0.95">
-              <!-- North America -->
-              <path class="map-continent" d="M65,75 C95,50 145,55 185,45 C230,40 270,60 280,95 C290,120 270,145 250,150 C265,175 255,200 230,220 C205,240 185,250 160,240 C140,230 130,205 115,190 C95,170 70,150 65,120 Z M165,245 C190,265 210,295 220,330 C195,335 175,305 165,245 Z M40,65 C60,50 85,60 80,85 C60,95 40,85 40,65 Z"/>
-              <!-- Greenland -->
-              <path class="map-continent" d="M300,35 C335,25 365,45 360,75 C345,95 315,95 300,75 Z"/>
-              <!-- South America -->
-              <path class="map-continent" d="M215,290 C250,285 295,310 315,350 C325,390 300,435 270,480 C245,510 230,490 225,450 C220,410 200,370 205,330 Z"/>
-              <!-- Europe & Scandinavia -->
-              <path class="map-continent" d="M440,75 C460,55 490,55 510,75 C520,105 500,135 480,145 C455,150 440,120 440,75 Z M445,140 C475,140 495,160 490,185 C465,195 440,185 445,140 Z M420,115 C440,105 445,125 435,145 C420,150 415,130 420,115 Z"/>
-              <!-- Africa -->
-              <path class="map-continent" d="M430,195 C490,185 540,210 550,265 C560,320 535,385 490,420 C455,410 435,360 425,310 C415,260 410,215 430,195 Z M560,345 C575,340 575,370 560,375 Z"/>
-              <!-- Asia -->
-              <path class="map-continent" d="M510,65 C590,45 720,40 820,80 C860,110 850,165 810,195 C770,215 745,245 715,280 C680,285 645,260 620,230 C585,225 555,185 520,170 C500,140 500,95 510,65 Z M625,230 C665,240 680,270 660,300 C635,310 615,280 625,230 Z"/>
-              <!-- Japan Archipelago -->
-              <path class="map-continent" d="M820,170 C835,165 845,185 840,210 C830,230 815,220 815,195 Z"/>
-              <!-- Southeast Asia & Malay -->
-              <path class="map-continent" d="M680,290 C710,290 715,315 690,325 Z M705,330 C735,325 745,345 720,355 Z M740,335 C780,330 780,355 750,360 Z"/>
-              <!-- Australia -->
-              <path class="map-continent" d="M720,350 C775,335 835,345 840,395 C845,435 810,465 755,455 C715,445 700,405 705,375 Z M795,470 C810,470 810,485 795,485 Z"/>
-              <!-- New Zealand -->
-              <path class="map-continent" d="M875,415 C890,410 890,435 875,440 Z M885,445 C900,440 895,475 880,470 Z"/>
-            </g>
-
-            <!-- Red Dashed Shipping Route Arcs (Radiating gracefully) -->
-            <!-- 1. USA -> UK -->
-            <path class="route-line" d="M165,195 C265,115 375,105 470,135"/>
-            <!-- 2. UK -> Japan -->
-            <path class="route-line" d="M470,135 C580,65 730,85 825,190"/>
-            <!-- 3. UK -> Singapore -->
-            <path class="route-line" d="M470,135 C545,195 620,255 695,320"/>
-            <!-- 4. UK -> Australia -->
-            <path class="route-line" d="M470,135 C570,245 670,325 765,395"/>
-            <!-- 5. Japan -> Singapore -->
-            <path class="route-line" d="M825,190 C790,235 745,280 695,320"/>
-            <!-- 6. Japan -> Australia -->
-            <path class="route-line" d="M825,190 C830,265 815,340 765,395"/>
-            <!-- 7. Japan -> New Zealand -->
-            <path class="route-line" d="M825,190 C870,265 905,355 885,440"/>
-            <!-- 8. Singapore -> Australia -->
-            <path class="route-line" d="M695,320 C720,350 740,370 765,395"/>
-            <!-- 9. Australia -> New Zealand -->
-            <path class="route-line" d="M765,395 C810,410 845,420 885,440"/>
-
-            <!-- 6 Major Hub Nodes with Glowing Pulsing Rings & Dark Label Badges -->
-            <!-- 1. UK Hub -->
-            <g class="map-node" transform="translate(470, 135)">
-              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
-              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
-              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
-              <rect x="-14" y="-23" width="28" height="15" rx="3.5" fill="#0B132B"/>
-              <text x="0" y="-12" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">UK</text>
-            </g>
-
-            <!-- 2. USA Hub -->
-            <g class="map-node" transform="translate(165, 195)">
-              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
-              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
-              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
-              <rect x="-34" y="-7" width="28" height="15" rx="3.5" fill="#0B132B"/>
-              <text x="-20" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">USA</text>
-            </g>
-
-            <!-- 3. JAPAN Hub -->
-            <g class="map-node" transform="translate(825, 190)">
-              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
-              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
-              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
-              <rect x="9" y="-7" width="34" height="15" rx="3.5" fill="#0B132B"/>
-              <text x="26" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">Japan</text>
-            </g>
-
-            <!-- 4. SINGAPORE Hub -->
-            <g class="map-node" transform="translate(695, 320)">
-              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
-              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
-              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
-              <rect x="-56" y="-7" width="48" height="15" rx="3.5" fill="#0B132B"/>
-              <text x="-32" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">Singapore</text>
-            </g>
-
-            <!-- 5. AUSTRALIA Hub -->
-            <g class="map-node" transform="translate(765, 395)">
-              <circle cx="0" cy="0" r="16" fill="url(#hubGlow)" class="node-pulse-ring"/>
-              <circle cx="0" cy="0" r="8" fill="#E31E24" opacity="0.3"/>
-              <circle cx="0" cy="0" r="4.5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
-              <rect x="-48" y="-7" width="42" height="15" rx="3.5" fill="#0B132B"/>
-              <text x="-27" y="4" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">Australia</text>
-            </g>
-
-            <!-- 6. NEW ZEALAND Hub -->
-            <g class="map-node" transform="translate(885, 440)">
-              <circle cx="0" cy="0" r="18" fill="url(#hubGlow)" class="node-pulse-ring"/>
-              <circle cx="0" cy="0" r="9" fill="#E31E24" opacity="0.35"/>
-              <circle cx="0" cy="0" r="5" fill="#E31E24" stroke="#FFFFFF" stroke-width="1.5"/>
-              <rect x="-26" y="8" width="52" height="15" rx="3.5" fill="#0B132B"/>
-              <text x="0" y="19" fill="#FFFFFF" font-size="8" font-weight="700" text-anchor="middle" font-family="'Poppins', sans-serif">New Zealand</text>
-            </g>
-          </svg>
+          <img src="assets/autohub-global-network-map.png" alt="AUTOHUB Global Vehicle Shipping Routes Map" class="network-map-img" loading="lazy">
         </div>
 
         <!-- Right Column: 6 Country Cards -->
@@ -929,19 +894,25 @@
 
     <!-- SECTION 3.9: WHY CHOOSE US -->
     <section id="why-choose-us" class="why-us-section" aria-label="Why Choose AUTOHUB Vehicle Logistics">
+      <!-- Full-Height Right-Aligned Bleed Image with Soft Gradient Fade -->
+      <div class="why-us-bg-image" aria-hidden="true">
+        <img src="assets/why-us-ferrari.png" alt="White Ferrari supercar secured on logistics carrier" class="why-us-bleed-img" loading="lazy">
+        <div class="why-us-fade-overlay"></div>
+      </div>
+
       <div class="container why-us-grid">
         <!-- Left Column: Copy & Buttons -->
         <div class="why-us-left" data-animate="fade-right">
-          <span class="why-us-eyebrow"><span class="eyebrow-dash">—</span> WHY CHOOSE US</span>
+          <span class="why-us-eyebrow"><span class="eyebrow-dash">—</span> WHY CHOOSE US?</span>
           <h2 class="why-us-title">
             Vehicle Import/Export<br>
             <span class="text-red">Made Easy!</span>
           </h2>
           <p class="why-us-desc">
-            Taking care of your vehicle at both import and export, AUTOHUB® offers expertise in worldwide vehicle shipping and logistics. With a global network and a dedicated team, we ensure a smooth, compliant and hassle-free experience for individual buyers, dealerships and businesses.
+            Taking care of your vehicle at both import and export, AUTOHUB&trade; offers expertise in worldwide vehicle shipping and logistics. With a global network and a dedicated team, we ensure a smooth, compliant and hassle-free experience for individual buyers, dealerships and businesses.
           </p>
           <div class="why-us-button-group">
-            <a href="#contact" class="btn-why-us-outline">Contact us</a>
+            <a href="#services" class="btn-why-us-outline">Learn More</a>
             <a href="#quote" class="btn-why-us-primary">
               <span>Get a Quote</span>
               <span class="why-us-btn-arrow" aria-hidden="true">→</span>
@@ -949,47 +920,65 @@
           </div>
         </div>
 
-        <!-- Right Column: Ferrari Image Aligned Right + Overlapping 2x2 Feature Cards -->
-        <div class="why-us-right" data-animate="fade-left">
-          <div class="why-us-image-container">
-            <img src="assets/why-us-ferrari.png" alt="White Ferrari supercar secured on transport pallet" class="why-us-main-img" loading="lazy">
-          </div>
-
+        <!-- Right/Center Column: 2x2 Feature Cards -->
+        <div class="why-us-cards-wrap" data-animate="fade-left">
           <div class="why-us-cards-grid">
-            <!-- Feature 1: Global Network -->
-            <div class="why-us-card feature-card" style="--stagger: 1">
+            <!-- Card 1: Custom Clearance -->
+            <div class="why-us-card" style="--stagger: 1">
               <div class="why-us-card__icon" aria-hidden="true">
-                <img src="assets/why-us-icon-network.png" alt="Global Network" width="36" height="36" loading="lazy">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
               </div>
-              <h3 class="why-us-card__title">Global Network</h3>
-              <p class="why-us-card__desc">Seamless worldwide vehicle transport across 6+ countries and major ports.</p>
+              <h3 class="why-us-card__title">Custom Clearance</h3>
+              <p class="why-us-card__desc">We handle all customs procedures and documentation for a smooth, hassle-free clearance.</p>
             </div>
 
-            <!-- Feature 2: Safe & Secure -->
-            <div class="why-us-card feature-card" style="--stagger: 2">
+            <!-- Card 2: Quality Check -->
+            <div class="why-us-card" style="--stagger: 2">
               <div class="why-us-card__icon" aria-hidden="true">
-                <img src="assets/why-us-icon-security.png" alt="Safe & Secure" width="32" height="32" loading="lazy">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <rect x="9.5" y="10" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.8"></rect>
+                  <path d="M10.5 10V8.5a1.5 1.5 0 0 1 3 0V10" stroke="currentColor" stroke-width="1.8"></path>
+                </svg>
               </div>
-              <h3 class="why-us-card__title">Safe & Secure</h3>
-              <p class="why-us-card__desc">Full marine and transit protection guaranteeing your vehicle's safety.</p>
+              <h3 class="why-us-card__title">Quality Check</h3>
+              <p class="why-us-card__desc">Every vehicle is carefully inspected to ensure it meets quality and condition standards.</p>
             </div>
 
-            <!-- Feature 3: Dedicated Support -->
-            <div class="why-us-card feature-card" style="--stagger: 3">
+            <!-- Card 3: Compliance Experts -->
+            <div class="why-us-card" style="--stagger: 3">
               <div class="why-us-card__icon" aria-hidden="true">
-                <img src="assets/why-us-icon-support.png" alt="Dedicated Support" width="33" height="33" loading="lazy">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                  <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                  <circle cx="12" cy="11" r="1" fill="currentColor"></circle>
+                  <line x1="11" y1="14" x2="15" y2="10" stroke-width="1.6"></line>
+                  <circle cx="14" cy="13" r="1" fill="currentColor"></circle>
+                </svg>
               </div>
-              <h3 class="why-us-card__title">Dedicated Support</h3>
-              <p class="why-us-card__desc">Expert end-to-end guidance from paperwork to final destination handover.</p>
+              <h3 class="why-us-card__title">Compliance Experts</h3>
+              <p class="why-us-card__desc">Our team ensures compliance with international regulations, taxes and emission standards.</p>
             </div>
 
-            <!-- Feature 4: Transparent Pricing -->
-            <div class="why-us-card feature-card" style="--stagger: 4">
+            <!-- Card 4: Guaranteed Work -->
+            <div class="why-us-card" style="--stagger: 4">
               <div class="why-us-card__icon" aria-hidden="true">
-                <img src="assets/why-us-icon-pricing.png" alt="Transparent Pricing" width="33" height="33" loading="lazy">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 8V4h4"></path>
+                  <path d="M16 4h4v4"></path>
+                  <path d="M20 16v4h-4"></path>
+                  <path d="M8 20H4v-4"></path>
+                  <circle cx="12" cy="12" r="4.5" stroke-width="1.8"></circle>
+                  <circle cx="12" cy="10" r="1.5" fill="currentColor"></circle>
+                  <path d="M9.8 14.5a2.2 2.2 0 0 1 4.4 0" stroke-width="1.6"></path>
+                </svg>
               </div>
-              <h3 class="why-us-card__title">Transparent Pricing</h3>
-              <p class="why-us-card__desc">No hidden charges or unexpected fees with transparent all-inclusive rates.</p>
+              <h3 class="why-us-card__title">Guaranteed Work</h3>
+              <p class="why-us-card__desc">Reliable service, on-time handling and complete support from start to finish.</p>
             </div>
           </div>
         </div>
@@ -1336,12 +1325,12 @@
     <!-- SECTION 3.14: FAQ -->
     <section id="faq" class="faq-section" aria-label="Frequently Asked Questions">
       <div class="container faq-container">
-        <div class="text-center" data-animate="fade-up">
-          <span class="eyebrow">— FAQS —</span>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-desc max-w-640 mx-auto">
-            Got questions about our vehicle shipping, customs clearances, or D2D logistics? Here are the most common queries answered.
-          </p>
+        <div class="faq-header text-center" data-animate="fade-up">
+          <div class="faq-eyebrow">
+            <span class="faq-dash" aria-hidden="true"></span>
+            <span>FAQS</span>
+          </div>
+          <h2 class="faq-title">Frequently Asked Questions</h2>
         </div>
 
         <!-- Accordion -->
@@ -1350,14 +1339,14 @@
           <div class="faq-item active" id="faqItem1">
             <button class="faq-trigger" aria-expanded="true" aria-controls="faqAnswer1" id="faqQuestion1">
               <span class="faq-question">How does Autohub's procurement process work?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
             <div class="faq-panel" id="faqAnswer1" role="region" aria-labelledby="faqQuestion1">
               <div class="faq-content">
                 <p>
-                  Simply share your parts requirements with Autohub. Our team coordinates with the relevant suppliers to source the required parts, manages pricing and procurement, and arranges logistics. We provide visibility into your order status, helping you stay informed from initial enquiry through to final delivery.
+                  Simply share your parts requirements with Autohub. Our team coordinates with the relevant suppliers to source the required parts, manages pricing and procurement, and arranges logistics. We also provide visibility into your order status, helping you stay informed from initial enquiry through to delivery.
                 </p>
               </div>
             </div>
@@ -1367,7 +1356,7 @@
           <div class="faq-item" id="faqItem2">
             <button class="faq-trigger" aria-expanded="false" aria-controls="faqAnswer2" id="faqQuestion2">
               <span class="faq-question">Can I buy vehicles from AUTOHUB?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
@@ -1384,7 +1373,7 @@
           <div class="faq-item" id="faqItem3">
             <button class="faq-trigger" aria-expanded="false" aria-controls="faqAnswer3" id="faqQuestion3">
               <span class="faq-question">What is your D2D process?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
@@ -1401,7 +1390,7 @@
           <div class="faq-item" id="faqItem4">
             <button class="faq-trigger" aria-expanded="false" aria-controls="faqAnswer4" id="faqQuestion4">
               <span class="faq-question">How do you ship the vehicles?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
@@ -1418,7 +1407,7 @@
           <div class="faq-item" id="faqItem5">
             <button class="faq-trigger" aria-expanded="false" aria-controls="faqAnswer5" id="faqQuestion5">
               <span class="faq-question">What is Roll-On-Roll-Off (RORO)?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
@@ -1432,13 +1421,10 @@
           </div>
         </div>
 
-        <div class="text-center pt-32" data-animate="fade-up">
-          <a href="#contact" class="btn btn-outline">
+        <div class="faq-action-wrap" data-animate="fade-up">
+          <a href="#contact" class="faq-btn-more">
             <span>See more</span>
-            <svg class="icon icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <span class="faq-btn-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -1446,34 +1432,37 @@
 
     <!-- SECTION 3.15: CTA BANNER -->
     <section class="cta-section" aria-label="Get Started with AUTOHUB">
-      <div class="container">
+      <div class="container cta-container">
         <div class="cta-banner" data-animate="zoom-in">
-          <!-- Dark Car Parallax Background -->
-          <div class="cta-banner__bg" data-parallax="0.15">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80" alt="Exotic sports car at twilight" class="cta-banner__img" loading="lazy">
-            <div class="cta-banner__overlay" aria-hidden="true"></div>
+          <!-- Right-aligned Car Image with smooth gradient blend -->
+          <div class="cta-banner__bg" aria-hidden="true">
+            <img src="assets/cta-car-unloading.jpg" alt="Sports car unloaded from transport trailer" class="cta-banner__img">
+            <div class="cta-banner__overlay"></div>
           </div>
 
           <div class="cta-banner__content">
-            <span class="eyebrow eyebrow--white">GET STARTED TODAY</span>
+            <div class="cta-eyebrow">
+              <span class="cta-dash" aria-hidden="true"></span>
+              <span>GET STARTED TODAY</span>
+            </div>
             <h2 class="cta-banner__title">Ready to Ship Your Vehicle?</h2>
             <p class="cta-banner__sub">
-              Get a tailored quote and expert guidance from our team. Fast, simple and no obligation.
+              Get a tailored quote and expert guidance from our team.<br class="cta-sub-br">Fast, simple and no obligation.
             </p>
             <div class="cta-banner__actions">
-              <a href="#quote" class="btn btn-primary btn-glow btn-lg" id="ctaQuoteBtn">
+              <a href="#quote" class="btn-cta-quote" id="ctaQuoteBtn">
                 <span>Get a Quote</span>
-                <svg class="icon icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="btn-arrow" aria-hidden="true">→</span>
               </a>
               <span class="cta-separator">or</span>
-              <a href="tel:+6494117425" class="btn btn-pill-outline-white btn-lg">
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              <a href="tel:+6494117425" class="btn-cta-call" aria-label="Speak to Our Team at 64 9 411 7425">
+                <svg class="cta-phone-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
-                <span>Speak to Our Team 64 9 411 7425</span>
+                <div class="cta-call-text">
+                  <span class="cta-call-sub">Speak to Our Team</span>
+                  <span class="cta-call-number">64 9 411 7425</span>
+                </div>
               </a>
             </div>
           </div>
@@ -1485,119 +1474,142 @@
   <!-- SECTION 3.16: FOOTER -->
   <footer id="contact" class="site-footer" aria-label="Site Footer">
     <div class="container footer-container">
-      <!-- Top Row: Logo, Contact Box & Socials -->
-      <div class="footer-top-row">
-        <div class="footer-brand-col">
-          <a href="#" class="footer-logo" aria-label="AUTOHUB Home">
-            <span class="logo-autohub text-white">AUTOHUB<sup class="logo-tm">TM</sup></span>
-            <span class="logo-domain text-red">.co.nz</span>
-            <span class="footer-logo__sub">GLOBAL VEHICLE LOGISTICS</span>
+      
+      <!-- Main Content Grid: Left Brand/Contact Card + 3 Link Columns -->
+      <div class="footer-main-grid">
+        <!-- Col 1: Logo & Contact Card -->
+        <div class="footer-brand-column">
+          <a href="#" class="footer-logo-link" aria-label="AUTOHUB Home">
+            <img src="assets/autohub-footer-logo.png" alt="AUTOHUB Global Vehicle Logistics" class="footer-brand-logo">
           </a>
+
+          <div class="footer-contact-card">
+            <h4 class="footer-card-heading">CONTACT US</h4>
+            <div class="footer-card-item">
+              <div class="footer-circle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+              </div>
+              <a href="tel:+6494117425" class="footer-card-link">64 9 411 7425</a>
+            </div>
+
+            <div class="footer-card-item">
+              <div class="footer-circle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-10 7L2 7"></path>
+                </svg>
+              </div>
+              <a href="mailto:customerservices@autohub.co.nz" class="footer-card-link">customerservices@autohub.co.nz</a>
+            </div>
+
+            <div class="footer-card-divider" aria-hidden="true"></div>
+
+            <div class="footer-card-social-row">
+              <span class="footer-follow-label">FOLLOW US</span>
+              <div class="footer-social-icons">
+                <a href="https://facebook.com" class="social-circle-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/>
+                  </svg>
+                </a>
+                <a href="https://instagram.com" class="social-circle-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+                <a href="https://x.com" class="social-circle-btn" aria-label="X Twitter" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" class="social-circle-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.98 0H8v16h4.98v-8.4c0-4.66 6.02-5.04 6.02 0V24H24V14.6c0-7.3-8.24-7.05-11.02-3.44V8z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="footer-contact-box">
-          <a href="tel:+6494117425" class="footer-contact-item">
-            <div class="footer-contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <span>64 9 411 7425</span>
-          </a>
-          <span class="footer-contact-sep" aria-hidden="true">•</span>
-          <a href="mailto:customerservices@autohub.co.nz" class="footer-contact-item">
-            <div class="footer-contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <span>customerservices@autohub.co.nz</span>
-          </a>
+        <!-- Col 2: COMPANY -->
+        <div class="footer-nav-col">
+          <h4 class="footer-nav-heading">COMPANY</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero" class="footer-nav-link"><span class="footer-dash">—</span><span>About</span></a></li>
+            <li><a href="#news" class="footer-nav-link"><span class="footer-dash">—</span><span>News</span></a></li>
+            <li><a href="#testimonials" class="footer-nav-link"><span class="footer-dash">—</span><span>Testimonials</span></a></li>
+            <li><a href="#services" class="footer-nav-link"><span class="footer-dash">—</span><span>Resources</span></a></li>
+            <li><a href="#faq" class="footer-nav-link"><span class="footer-dash">—</span><span>FAQs</span></a></li>
+            <li><a href="#contact" class="footer-nav-link"><span class="footer-dash">—</span><span>Contact us</span></a></li>
+          </ul>
         </div>
 
-        <div class="footer-social-col">
-          <span class="footer-social-label">FOLLOW US ON</span>
-          <div class="footer-social-links">
-            <a href="https://facebook.com" class="social-icon" aria-label="AUTOHUB on Facebook" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://instagram.com" class="social-icon" aria-label="AUTOHUB on Instagram" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://x.com" class="social-icon" aria-label="AUTOHUB on X Twitter" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://linkedin.com" class="social-icon" aria-label="AUTOHUB on LinkedIn" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
+        <!-- Col 3: SERVICES -->
+        <div class="footer-nav-col">
+          <h4 class="footer-nav-heading">SERVICES</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#services" class="footer-nav-link"><span class="footer-dash">—</span><span>Ex UK VAT Removal</span></a></li>
+            <li><a href="#services" class="footer-nav-link"><span class="footer-dash">—</span><span>Ex UK Transit Finance</span></a></li>
+            <li><a href="#services" class="footer-nav-link"><span class="footer-dash">—</span><span>Emission Certificate/Statement of</span></a></li>
+            <li><a href="#services" class="footer-nav-link"><span class="footer-dash">—</span><span>Compliance Application</span></a></li>
+            <li><a href="#services" class="footer-nav-link"><span class="footer-dash">—</span><span>Roll-on roll-off shipping New Zealand</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: SUPPORT -->
+        <div class="footer-nav-col">
+          <h4 class="footer-nav-heading">SUPPORT</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#routes" class="footer-nav-link"><span class="footer-dash">—</span><span>Vehicles We've Imported</span></a></li>
+            <li><a href="#dealer-intel" class="footer-nav-link"><span class="footer-dash">—</span><span>Export Agents &amp; Car Dealers</span></a></li>
+            <li><a href="#faq" class="footer-nav-link"><span class="footer-dash">—</span><span>Insurance</span></a></li>
+            <li><a href="#faq" class="footer-nav-link"><span class="footer-dash">—</span><span>Terms of Trade</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Shipping Routes Block -->
+      <div class="footer-routes-section">
+        <h4 class="footer-routes-heading">SHIPPING ROUTE</h4>
+        <div class="footer-routes-grid">
+          <div class="footer-routes-row">
+            <a href="#routes" class="footer-route-link">Japan to NZ</a>
+            <a href="#routes" class="footer-route-link">Japan to Aus</a>
+            <a href="#routes" class="footer-route-link">Japan to UK</a>
+            <a href="#routes" class="footer-route-link">Japan to Singapore</a>
+            <a href="#routes" class="footer-route-link">Japan to USA</a>
+            <a href="#routes" class="footer-route-link">Japan to Other</a>
+            <a href="#routes" class="footer-route-link">UK to Aus</a>
+            <a href="#routes" class="footer-route-link">UK to Singapore</a>
+          </div>
+          <div class="footer-routes-row">
+            <a href="#routes" class="footer-route-link">UK to Other</a>
+            <a href="#routes" class="footer-route-link">NZ to Aus</a>
+            <a href="#routes" class="footer-route-link">Aus to NZ</a>
+            <a href="#routes" class="footer-route-link">Singapore to NZ</a>
+            <a href="#routes" class="footer-route-link">Singapore to Aus</a>
           </div>
         </div>
       </div>
 
-      <!-- 3 Link Columns -->
-      <div class="footer-links-grid">
-        <!-- Col 1: COMPANY -->
-        <div class="footer-nav-col">
-          <h4 class="footer-nav-heading">COMPANY</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#hero" class="footer-link">About</a></li>
-            <li><a href="#news" class="footer-link">News</a></li>
-            <li><a href="#testimonials" class="footer-link">Testimonials</a></li>
-            <li><a href="#services" class="footer-link">Resources</a></li>
-            <li><a href="#faq" class="footer-link">FAQs</a></li>
-            <li><a href="#contact" class="footer-link">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 2: SERVICES -->
-        <div class="footer-nav-col">
-          <h4 class="footer-nav-heading">SERVICES</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#services" class="footer-link">Ex UK VAT Removal</a></li>
-            <li><a href="#services" class="footer-link">Ex UK Transit Finance</a></li>
-            <li><a href="#services" class="footer-link">Emission Certificate / Statement of Compliance</a></li>
-            <li><a href="#services" class="footer-link">Compliance Application</a></li>
-            <li><a href="#services" class="footer-link">Roll-on roll-off shipping New Zealand</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: SUPPORT -->
-        <div class="footer-nav-col">
-          <h4 class="footer-nav-heading">SUPPORT</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#routes" class="footer-link">Vehicles We've Imported</a></li>
-            <li><a href="#dealer-intel" class="footer-link">Export Agents &amp; Car Dealers</a></li>
-            <li><a href="#faq" class="footer-link">Insurance</a></li>
-            <li><a href="#faq" class="footer-link">Terms of Trade</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Shipping Route Row of Chips -->
-      <div class="footer-routes-block">
-        <h4 class="footer-routes-title">SHIPPING ROUTE</h4>
-        <div class="routes-chips-wrap">
-          <a href="#routes" class="route-chip">Japan to NZ</a>
-          <a href="#routes" class="route-chip">Japan to Aus</a>
-          <a href="#routes" class="route-chip">Japan to UK</a>
-          <a href="#routes" class="route-chip">Japan to USA</a>
-          <a href="#routes" class="route-chip">Japan to Other</a>
-          <a href="#routes" class="route-chip">UK to Aus</a>
-          <a href="#routes" class="route-chip">UK to Singapore</a>
-          <a href="#routes" class="route-chip">UK to NZ</a>
-          <a href="#routes" class="route-chip">NZ to Aus</a>
-          <a href="#routes" class="route-chip">Aus to NZ</a>
-          <a href="#routes" class="route-chip">Singapore to NZ</a>
-          <a href="#routes" class="route-chip">Singapore to Aus</a>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
+      <!-- Footer Bottom Bar -->
       <div class="footer-bottom-bar">
         <p class="footer-copyright">
           &copy; Copyright 2026 AUTOHUB All Rights Reserved
         </p>
-        <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top of page">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="18 15 12 9 6 15"/>
-          </svg>
-        </button>
+        <div class="footer-back-to-top" id="backToTopTrigger">
+          <span class="back-to-top-text">Back to top</span>
+          <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top of page">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 4l-5.5 6h3.5v9h4v-9h3.5L12 4z"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </footer>
