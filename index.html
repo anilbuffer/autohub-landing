@@ -785,214 +785,211 @@
 
     <!-- SECTION 3.8: HOW IT WORKS -->
     <section id="how-it-works" class="process-section" aria-label="How AUTOHUB Shipping Works">
-      <!-- Faint Map Watermark & Drifting Plane Icon -->
-      <div class="process-watermark" aria-hidden="true">
-        <svg class="process-map-bg" viewBox="0 0 1200 400" fill="none" opacity="0.04">
-          <path d="M100,100 Q300,50 600,100 T1100,120 M150,250 Q450,200 750,260 T1150,240" stroke="#0B1630" stroke-width="4" stroke-dasharray="8 8"/>
-          <circle cx="200" cy="100" r="80" fill="#0B1630"/>
-          <circle cx="650" cy="180" r="100" fill="#0B1630"/>
-          <circle cx="1000" cy="120" r="90" fill="#0B1630"/>
-        </svg>
-        <div class="drifting-plane" id="driftingPlane">
-          <svg viewBox="0 0 24 24" fill="#E31E24" width="32" height="32" aria-hidden="true">
-            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-          </svg>
-        </div>
+      <!-- Background World Map & Flight Trail Assets -->
+      <div class="process-bg-decoration" aria-hidden="true">
+        <img src="assets/process-map-americas.png" class="process-map-americas" alt="" loading="lazy">
+        <img src="assets/process-map-eurasia.png" class="process-map-eurasia" alt="" loading="lazy">
+        <img src="assets/process-flight-trail.png" class="process-flight-trail" alt="" loading="lazy">
       </div>
 
       <div class="container process-container">
-        <!-- Header -->
-        <div class="text-center" data-animate="fade-up">
-          <span class="eyebrow">— HOW IT WORKS —</span>
-          <h2 class="section-title">A Simple Process From Start to Finish</h2>
-          <p class="section-desc max-w-640 mx-auto">
-            From your first enquiry to final handover, our structured five-step workflow guarantees complete peace of mind.
+        <!-- Section Header -->
+        <div class="process-header text-center" data-animate="fade-up">
+          <div class="process-eyebrow">
+            <span class="process-dash">—</span> HOW IT WORKS
+          </div>
+          <h2 class="section-title process-title">A Simple Process From Start to Finish</h2>
+          <p class="section-desc process-desc">
+            We make International vehicle shipping straightforward with a clear, step-by-step process and full support at every stage.
           </p>
         </div>
 
-        <!-- Horizontal Timeline -->
-        <div class="timeline-wrap" data-animate="fade-up" data-delay="150" id="processTimeline">
-          <!-- Connector Track -->
-          <div class="timeline-line">
-            <div class="timeline-line__progress" id="timelineProgress"></div>
+        <!-- 5-Step Process Timeline & Cards -->
+        <div class="process-timeline-wrap" data-animate="fade-up" data-delay="150" id="processTimeline">
+          <!-- Step 01 -->
+          <div class="process-step-col" style="--stagger: 1">
+            <div class="process-step-top">
+              <div class="step-num-badge">01</div>
+              <div class="step-connector">
+                <span class="connector-line"></span>
+                <span class="connector-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+                <span class="connector-line"></span>
+              </div>
+            </div>
+            <div class="process-card">
+              <div class="process-card-icon">
+                <img src="assets/process-icon-quote.png" alt="" width="32" height="32" loading="lazy">
+              </div>
+              <h3 class="process-card-title">Get a Quote</h3>
+              <p class="process-card-desc">Tell us about your vehicle and destination. We'll provide a clear, no-obligation quote.</p>
+            </div>
           </div>
 
-          <div class="timeline-grid">
-            <!-- Step 01 -->
-            <div class="timeline-step" style="--stagger: 1">
-              <div class="timeline-badge">01</div>
-              <div class="timeline-card">
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="12" y1="18" x2="12" y2="12"/>
-                    <line x1="9" y1="15" x2="15" y2="15"/>
+          <!-- Step 02 -->
+          <div class="process-step-col" style="--stagger: 2">
+            <div class="process-step-top">
+              <div class="step-num-badge">02</div>
+              <div class="step-connector">
+                <span class="connector-line"></span>
+                <span class="connector-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </div>
-                <h3 class="timeline-title">Get a Quote</h3>
-                <p class="timeline-desc">Tell us about your vehicle and destination. We'll provide a clear, no-obligation quote.</p>
+                </span>
+                <span class="connector-line"></span>
               </div>
             </div>
+            <div class="process-card">
+              <div class="process-card-icon">
+                <img src="assets/process-icon-survey.png" alt="" width="33" height="33" loading="lazy">
+              </div>
+              <h3 class="process-card-title">Collection &amp; Survey</h3>
+              <p class="process-card-desc">We guide you through the required documents and pre-shipment preparation.</p>
+            </div>
+          </div>
 
-            <!-- Step 02 -->
-            <div class="timeline-step" style="--stagger: 2">
-              <div class="timeline-badge">02</div>
-              <div class="timeline-card">
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 11l3 3L22 4"/>
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          <!-- Step 03 -->
+          <div class="process-step-col" style="--stagger: 3">
+            <div class="process-step-top">
+              <div class="step-num-badge">03</div>
+              <div class="step-connector">
+                <span class="connector-line"></span>
+                <span class="connector-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </div>
-                <h3 class="timeline-title">Collection &amp; Survey</h3>
-                <p class="timeline-desc">We guide you through the required documents and pre-shipment preparation.</p>
+                </span>
+                <span class="connector-line"></span>
               </div>
             </div>
+            <div class="process-card">
+              <div class="process-card-icon">
+                <img src="assets/process-icon-shipping.png" alt="" width="30" height="30" loading="lazy">
+              </div>
+              <h3 class="process-card-title">Export &amp; Shipping</h3>
+              <p class="process-card-desc">Your vehicle is securely transported via our global shipping network.</p>
+            </div>
+          </div>
 
-            <!-- Step 03 -->
-            <div class="timeline-step" style="--stagger: 3">
-              <div class="timeline-badge">03</div>
-              <div class="timeline-card">
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="2" y1="12" x2="22" y2="12"/>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          <!-- Step 04 -->
+          <div class="process-step-col" style="--stagger: 4">
+            <div class="process-step-top">
+              <div class="step-num-badge">04</div>
+              <div class="step-connector">
+                <span class="connector-line"></span>
+                <span class="connector-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </div>
-                <h3 class="timeline-title">Export &amp; Shipping</h3>
-                <p class="timeline-desc">Your vehicle is securely transported via our global shipping network.</p>
+                </span>
+                <span class="connector-line"></span>
               </div>
             </div>
-
-            <!-- Step 04 -->
-            <div class="timeline-step" style="--stagger: 4">
-              <div class="timeline-badge">04</div>
-              <div class="timeline-card">
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="3" width="15" height="13"/>
-                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                    <circle cx="5.5" cy="18.5" r="2.5"/>
-                    <circle cx="18.5" cy="18.5" r="2.5"/>
-                  </svg>
-                </div>
-                <h3 class="timeline-title">Port &amp; Clearance</h3>
-                <p class="timeline-desc">We manage customs clearance, VAT removal, compliance and all necessary documentation.</p>
+            <div class="process-card">
+              <div class="process-card-icon">
+                <img src="assets/process-icon-port.png" alt="" width="37" height="37" loading="lazy">
               </div>
+              <h3 class="process-card-title">Port &amp; Clearance</h3>
+              <p class="process-card-desc">We manage customs clearance, VAT removal, compliance and all necessary documentation.</p>
             </div>
+          </div>
 
-            <!-- Step 05 -->
-            <div class="timeline-step" style="--stagger: 5">
-              <div class="timeline-badge">05</div>
-              <div class="timeline-card">
-                <div class="card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                  </svg>
-                </div>
-                <h3 class="timeline-title">Delivery</h3>
-                <p class="timeline-desc">Your vehicle is delivered safely to your chosen destination, ready for the road.</p>
+          <!-- Step 05 -->
+          <div class="process-step-col" style="--stagger: 5">
+            <div class="process-step-top">
+              <div class="step-num-badge">05</div>
+            </div>
+            <div class="process-card">
+              <div class="process-card-icon">
+                <img src="assets/process-icon-delivery.png" alt="" width="41" height="41" loading="lazy">
               </div>
+              <h3 class="process-card-title">Delivery</h3>
+              <p class="process-card-desc">Your vehicle is delivered safely to your chosen destination, ready for the road.</p>
             </div>
           </div>
         </div>
 
         <!-- Center CTA Button -->
-        <div class="text-center pt-32" data-animate="fade-up">
-          <a href="#quote" class="btn btn-primary btn-lg">
+        <div class="process-cta-wrap text-center" data-animate="fade-up">
+          <a href="#quote" class="btn-process-cta">
             <span>Get a Quote</span>
-            <svg class="icon icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <span class="process-cta-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
     </section>
 
     <!-- SECTION 3.9: WHY CHOOSE US -->
-    <section id="why-choose-us" class="why-us-section bg-alt" aria-label="Why Choose AUTOHUB Vehicle Logistics">
+    <section id="why-choose-us" class="why-us-section" aria-label="Why Choose AUTOHUB Vehicle Logistics">
       <div class="container why-us-grid">
         <!-- Left Column: Copy & Buttons -->
         <div class="why-us-left" data-animate="fade-right">
-          <span class="eyebrow">— WHY CHOOSE US</span>
-          <h2 class="section-title">
+          <span class="why-us-eyebrow"><span class="eyebrow-dash">—</span> WHY CHOOSE US</span>
+          <h2 class="why-us-title">
             Vehicle Import/Export<br>
             <span class="text-red">Made Easy!</span>
           </h2>
-          <p class="section-desc">
+          <p class="why-us-desc">
             Taking care of your vehicle at both import and export, AUTOHUB® offers expertise in worldwide vehicle shipping and logistics. With a global network and a dedicated team, we ensure a smooth, compliant and hassle-free experience for individual buyers, dealerships and businesses.
           </p>
-          <div class="button-group pt-16">
-            <a href="#services" class="btn btn-outline">Learn More</a>
-            <a href="#quote" class="btn btn-primary">
+          <div class="why-us-button-group">
+            <a href="#contact" class="btn-why-us-outline">Contact us</a>
+            <a href="#quote" class="btn-why-us-primary">
               <span>Get a Quote</span>
-              <svg class="icon icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+              <span class="why-us-btn-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
 
-        <!-- Right Column: Image with Overlapping 2x2 Feature Cards -->
+        <!-- Right Column: Ferrari Image Aligned Right + Overlapping 2x2 Feature Cards -->
         <div class="why-us-right" data-animate="fade-left">
           <div class="why-us-image-container">
-            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80" alt="White sports car secured with heavy-duty tie downs on transporter" class="why-us-main-img" loading="lazy">
-            <div class="why-us-gradient-overlay" aria-hidden="true"></div>
+            <img src="assets/why-us-ferrari.png" alt="White Ferrari supercar secured on transport pallet" class="why-us-main-img" loading="lazy">
           </div>
 
           <div class="why-us-cards-grid">
-            <!-- Feature 1 -->
-            <div class="feature-card" style="--stagger: 1">
-              <div class="feature-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <polyline points="9 12 11 14 15 10"/>
-                </svg>
+            <!-- Feature 1: Global Network -->
+            <div class="why-us-card feature-card" style="--stagger: 1">
+              <div class="why-us-card__icon" aria-hidden="true">
+                <img src="assets/why-us-icon-network.png" alt="Global Network" width="36" height="36" loading="lazy">
               </div>
-              <h3 class="feature-card__title">Custom Clearance</h3>
-              <p class="feature-card__desc">We handle all customs procedures and documentation for a smooth, hassle-free clearance.</p>
+              <h3 class="why-us-card__title">Global Network</h3>
+              <p class="why-us-card__desc">Seamless worldwide vehicle transport across 6+ countries and major ports.</p>
             </div>
 
-            <!-- Feature 2 -->
-            <div class="feature-card" style="--stagger: 2">
-              <div class="feature-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
+            <!-- Feature 2: Safe & Secure -->
+            <div class="why-us-card feature-card" style="--stagger: 2">
+              <div class="why-us-card__icon" aria-hidden="true">
+                <img src="assets/why-us-icon-security.png" alt="Safe & Secure" width="32" height="32" loading="lazy">
               </div>
-              <h3 class="feature-card__title">Quality Check</h3>
-              <p class="feature-card__desc">Every vehicle is carefully inspected to ensure it meets quality and condition standards.</p>
+              <h3 class="why-us-card__title">Safe & Secure</h3>
+              <p class="why-us-card__desc">Full marine and transit protection guaranteeing your vehicle's safety.</p>
             </div>
 
-            <!-- Feature 3 -->
-            <div class="feature-card" style="--stagger: 3">
-              <div class="feature-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                </svg>
+            <!-- Feature 3: Dedicated Support -->
+            <div class="why-us-card feature-card" style="--stagger: 3">
+              <div class="why-us-card__icon" aria-hidden="true">
+                <img src="assets/why-us-icon-support.png" alt="Dedicated Support" width="33" height="33" loading="lazy">
               </div>
-              <h3 class="feature-card__title">Compliance Experts</h3>
-              <p class="feature-card__desc">Our team ensures compliance with international regulations, taxes and emission standards.</p>
+              <h3 class="why-us-card__title">Dedicated Support</h3>
+              <p class="why-us-card__desc">Expert end-to-end guidance from paperwork to final destination handover.</p>
             </div>
 
-            <!-- Feature 4 -->
-            <div class="feature-card" style="--stagger: 4">
-              <div class="feature-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                </svg>
+            <!-- Feature 4: Transparent Pricing -->
+            <div class="why-us-card feature-card" style="--stagger: 4">
+              <div class="why-us-card__icon" aria-hidden="true">
+                <img src="assets/why-us-icon-pricing.png" alt="Transparent Pricing" width="33" height="33" loading="lazy">
               </div>
-              <h3 class="feature-card__title">Guaranteed Work</h3>
-              <p class="feature-card__desc">Reliable service, on-time handling and complete support from start to finish.</p>
+              <h3 class="why-us-card__title">Transparent Pricing</h3>
+              <p class="why-us-card__desc">No hidden charges or unexpected fees with transparent all-inclusive rates.</p>
             </div>
           </div>
         </div>
@@ -1110,9 +1107,9 @@
           </div>
         </div>
 
-        <!-- Right: 3D Browser Mockup -->
+        <!-- Right: Browser Mockup with Procurly Screenshot -->
         <div class="portal-right" data-animate="fade-left">
-          <div class="browser-mockup mockup-3d" id="procurlyMockup">
+          <div class="browser-mockup portal-mockup" id="procurlyMockup">
             <div class="mockup-header">
               <div class="mockup-dots" aria-hidden="true">
                 <span class="dot dot--red"></span>
@@ -1121,100 +1118,15 @@
               </div>
               <div class="mockup-address-bar">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mockup-lock" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                <span>portal.procurly.com/nz-logistics</span>
+                <span>portal.procurly.com/operational-dashboard</span>
               </div>
               <div class="mockup-user-pill">
                 <span class="online-indicator"></span>
-                <span>Autohub Trade ID #8841</span>
+                <span>Procurly Admin</span>
               </div>
             </div>
-
-            <div class="mockup-dashboard">
-              <!-- Sidebar -->
-              <aside class="dashboard-sidebar">
-                <div class="sidebar-brand">
-                  <span class="brand-p">P</span>
-                  <span class="brand-name">Procurly</span>
-                </div>
-                <ul class="sidebar-nav">
-                  <li class="active">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                    <span>Overview</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                    <span>Active Shipments</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                    <span>Parts Catalog</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    <span>Customs Docs</span>
-                  </li>
-                </ul>
-              </aside>
-
-              <!-- Main Panel -->
-              <div class="dashboard-content">
-                <!-- KPI Cards -->
-                <div class="dashboard-kpis">
-                  <div class="kpi-card">
-                    <span class="kpi-label">Active Orders</span>
-                    <strong class="kpi-val">24 Units</strong>
-                    <span class="kpi-badge kpi-badge--green">↑ 100% on schedule</span>
-                  </div>
-                  <div class="kpi-card">
-                    <span class="kpi-label">In Ocean Transit</span>
-                    <strong class="kpi-val">18 Consignments</strong>
-                    <span class="kpi-badge kpi-badge--blue">RoRo Nagoya &gt; AKL</span>
-                  </div>
-                  <div class="kpi-card">
-                    <span class="kpi-label">Customs Clearance</span>
-                    <strong class="kpi-val">6 Cleared</strong>
-                    <span class="kpi-badge kpi-badge--gray">Ready for Hub</span>
-                  </div>
-                </div>
-
-                <!-- Table -->
-                <div class="dashboard-table-wrap">
-                  <table class="dashboard-table">
-                    <thead>
-                      <tr>
-                        <th>Consignment</th>
-                        <th>Origin Port</th>
-                        <th>Destination</th>
-                        <th>Status</th>
-                        <th>ETA</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>#PRC-9912</strong> (Toyota Engine Assemblies)</td>
-                        <td>Yokohama, JPN</td>
-                        <td>Auckland, NZ</td>
-                        <td><span class="status-pill status-pill--green">In Transit</span></td>
-                        <td>2 Days</td>
-                      </tr>
-                      <tr>
-                        <td><strong>#PRC-9908</strong> (Brembo Brake Kits)</td>
-                        <td>Southampton, UK</td>
-                        <td>Christchurch, NZ</td>
-                        <td><span class="status-pill status-pill--amber">Customs MPI</span></td>
-                        <td>Tomorrow</td>
-                      </tr>
-                      <tr>
-                        <td><strong>#PRC-9895</strong> (Subaru Transmission)</td>
-                        <td>Nagoya, JPN</td>
-                        <td>Tauranga, NZ</td>
-                        <td><span class="status-pill status-pill--blue">Vessel Berthed</span></td>
-                        <td>Today</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+            <div class="mockup-screenshot-wrap">
+              <img src="assets/procurly-dashboard.jpg" alt="Procurly B2B Procurement and Logistics Operational Dashboard" class="platform-mockup-img" loading="lazy">
             </div>
           </div>
         </div>
@@ -1225,76 +1137,23 @@
     <section id="dealer-intel" class="dip-section" aria-label="AUTOHUB Dealer Intelligence Platform">
       <div class="container dip-grid">
         <!-- Left: Dark Mockup with Car Listings & Filters -->
+        <!-- Left: Browser Mockup with DIP Screenshot -->
         <div class="dip-left" data-animate="fade-right">
-          <div class="browser-mockup mockup-dark">
-            <div class="mockup-header mockup-header--dark">
+          <div class="browser-mockup dip-mockup" id="dipMockup">
+            <div class="mockup-header">
               <div class="mockup-dots" aria-hidden="true">
                 <span class="dot dot--red"></span>
                 <span class="dot dot--yellow"></span>
                 <span class="dot dot--green"></span>
               </div>
-              <div class="mockup-address-bar mockup-address-bar--dark">
-                <span>dip.autohub.co.nz/live-feed?source=HEXA-AUCTIONS</span>
+              <div class="mockup-address-bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mockup-lock" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>dip.autohub.co.nz/dealer-workspace/browse-vehicles</span>
               </div>
-              <span class="dip-badge-tag">AI LIVE FEED</span>
+              <span class="dip-badge-tag">LIVE DEALER FEED</span>
             </div>
-
-            <div class="dip-mockup-body">
-              <!-- Top Filter Ribbon -->
-              <div class="dip-filters-ribbon">
-                <span class="filter-chip active">All Stock (4,820)</span>
-                <span class="filter-chip">Grade 4.5+</span>
-                <span class="filter-chip">Hybrid / EV</span>
-                <span class="filter-chip">Under 40k km</span>
-                <span class="filter-chip">Fixed Price D2D</span>
-              </div>
-
-              <!-- Car Grid -->
-              <div class="dip-cars-grid">
-                <!-- Vehicle Card 1 -->
-                <div class="dip-car-card">
-                  <div class="dip-car-thumb">
-                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="2022 Toyota Land Cruiser Prado" loading="lazy">
-                    <span class="dip-grade-badge">Grade 4.5 A</span>
-                  </div>
-                  <div class="dip-car-info">
-                    <h4 class="dip-car-name">2022 Toyota Land Cruiser Prado</h4>
-                    <div class="dip-car-meta">28,000 km • TX-L • White Pearl</div>
-                    <div class="dip-car-pricing">
-                      <div class="pricing-group">
-                        <span class="pricing-label">Indicative NZ Retail</span>
-                        <strong class="pricing-val">$68,500 NZD</strong>
-                      </div>
-                      <div class="pricing-group">
-                        <span class="pricing-label">Autohub D2D Landed</span>
-                        <strong class="pricing-val text-red">$52,400 NZD</strong>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Vehicle Card 2 -->
-                <div class="dip-car-card">
-                  <div class="dip-car-thumb">
-                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=400&q=80" alt="2021 Mercedes-Benz C200 AMG Line" loading="lazy">
-                    <span class="dip-grade-badge">Grade 5.0 S</span>
-                  </div>
-                  <div class="dip-car-info">
-                    <h4 class="dip-car-name">2021 Mercedes-Benz C200 AMG</h4>
-                    <div class="dip-car-meta">19,500 km • Premium Plus • Obsidian</div>
-                    <div class="dip-car-pricing">
-                      <div class="pricing-group">
-                        <span class="pricing-label">Indicative NZ Retail</span>
-                        <strong class="pricing-val">$54,900 NZD</strong>
-                      </div>
-                      <div class="pricing-group">
-                        <span class="pricing-label">Autohub D2D Landed</span>
-                        <strong class="pricing-val text-red">$41,800 NZD</strong>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="mockup-screenshot-wrap">
+              <img src="assets/autohub-dip-platform.png" alt="AutoHub Dealer Intelligence Platform (DIP) Live Matching Vehicles" class="platform-mockup-img" loading="lazy">
             </div>
           </div>
         </div>
@@ -1325,19 +1184,13 @@
         <!-- Header with Controls -->
         <div class="testimonials-header" data-animate="fade-up">
           <div class="testimonials-header__title">
-            <span class="eyebrow eyebrow--white">— TESTIMONIALS</span>
-            <h2 class="section-title text-white">See What Our Clients Have To Say</h2>
+            <span class="testimonials-eyebrow"><span class="eyebrow-dash">—</span> TESTIMONIALS</span>
+            <h2 class="testimonials-title">See What Our Clients Have To Say</h2>
           </div>
           <div class="testimonials-controls" aria-label="Carousel navigation">
-            <button class="carousel-arrow" id="carouselPrevBtn" aria-label="Previous testimonial">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
             <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Testimonial slides">
               <!-- Rendered via JS -->
             </div>
-            <button class="carousel-arrow" id="carouselNextBtn" aria-label="Next testimonial">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
           </div>
         </div>
 
@@ -1346,109 +1199,138 @@
           <div class="testimonials-track" id="testimonialsTrack">
             <!-- Review 1: Brian Wright -->
             <div class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
               <p class="testimonial-quote">
-                "AUTOHUB has revolutionized how Smithtown Motors sources vehicles from Japan and the UK. Their fixed door-to-door pricing means zero unpleasant surprises, and the clearance speed through Auckland port is second to none."
+                Thank you for your excellent customer service care, you made it all sound easy and effectively answered my queries.<br><br>
+                My contacts are as per below and I will be looking forward to hearing more from you closer to the ETA of the vehicle.
               </p>
-              <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Brian Wright portrait" class="author-avatar" loading="lazy">
-                <div class="author-details">
-                  <strong class="author-name">Brian Wright</strong>
-                  <span class="author-business">Smithtown Motors (Auckland)</span>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Brian Wright portrait" class="author-avatar" loading="lazy">
+                  <div class="author-details">
+                    <strong class="author-name">Brian Wright</strong>
+                    <span class="author-business">Smithburn Motors</span>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-quote-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
                 </div>
               </div>
-              <svg class="testimonial-quote-bg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
             </div>
 
             <!-- Review 2: Clement. N -->
             <div class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
               <p class="testimonial-quote">
-                "Handling UK VAT removal on our own used to be a documentation nightmare. With AUTOHUB, the entire 20% VAT recovery process was smooth and automated. Our shipping transit finance was approved in hours!"
+                We have always enjoyed a good working relationship with Autohub over the years.<br><br>
+                They have teams that are always attentive and quick to solve any queries or questions I may have.
               </p>
-              <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Clement N portrait" class="author-avatar" loading="lazy">
-                <div class="author-details">
-                  <strong class="author-name">Clement. N</strong>
-                  <span class="author-business">B &amp; J Trades (Wellington)</span>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Clement N portrait" class="author-avatar" loading="lazy">
+                  <div class="author-details">
+                    <strong class="author-name">Clement. N</strong>
+                    <span class="author-business">B &amp; Z Trades</span>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-quote-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
                 </div>
               </div>
-              <svg class="testimonial-quote-bg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
             </div>
 
             <!-- Review 3: Kyoko A. -->
             <div class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
               <p class="testimonial-quote">
-                "We ship hundreds of vehicles across Japan and Australasia every single year. The AUTOHUB team understands biosecurity, MPI regulations, and RoRo scheduling better than anyone in the industry. Highly recommended."
+                We have always enjoyed a good working relationship with Autohub over the years.<br><br>
+                They have teams that are always attentive and quick to solve any queries or questions I may have.
               </p>
-              <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Kyoko A portrait" class="author-avatar" loading="lazy">
-                <div class="author-details">
-                  <strong class="author-name">Kyoko A.</strong>
-                  <span class="author-business">Armstrong's Car Trades</span>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Kyoko A portrait" class="author-avatar" loading="lazy">
+                  <div class="author-details">
+                    <strong class="author-name">Kyoko A.</strong>
+                    <span class="author-business">Armstrong's Car Trades</span>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-quote-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
                 </div>
               </div>
-              <svg class="testimonial-quote-bg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
             </div>
 
-            <!-- Review 4: David Miller -->
+            <!-- Review 4: Clement. N (AKG Studio) -->
             <div class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
               <p class="testimonial-quote">
-                "I imported a classic 1973 Porsche from California to Christchurch. The AUTOHUB specialized logistics team treated the car with utmost care, and gave me live status updates every step of the journey."
+                We have always enjoyed a good working relationship with Autohub over the years.<br><br>
+                They have teams that are always attentive and quick to solve any queries or questions I may have.
               </p>
-              <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="David Miller portrait" class="author-avatar" loading="lazy">
-                <div class="author-details">
-                  <strong class="author-name">David Miller</strong>
-                  <span class="author-business">Pacific Auto Imports</span>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Clement N portrait" class="author-avatar" loading="lazy">
+                  <div class="author-details">
+                    <strong class="author-name">Clement. N</strong>
+                    <span class="author-business">AKG Studio</span>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-quote-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
                 </div>
               </div>
-              <svg class="testimonial-quote-bg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
             </div>
 
-            <!-- Review 5: Sarah Jenkins -->
+            <!-- Review 5: David Miller -->
             <div class="testimonial-card">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
               <p class="testimonial-quote">
-                "Their customer support team in New Zealand is fantastic. Whenever we needed documentation or delivery schedule adjustments, they answered the phone immediately. A true partner for automotive businesses."
+                I imported a classic 1973 Porsche from California to Christchurch. The AUTOHUB specialized logistics team treated the car with utmost care, and gave me live status updates every step of the journey.
               </p>
-              <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="Sarah Jenkins portrait" class="author-avatar" loading="lazy">
-                <div class="author-details">
-                  <strong class="author-name">Sarah Jenkins</strong>
-                  <span class="author-business">Apex Vehicle Traders</span>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="David Miller portrait" class="author-avatar" loading="lazy">
+                  <div class="author-details">
+                    <strong class="author-name">David Miller</strong>
+                    <span class="author-business">Pacific Auto Imports</span>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-quote-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
                 </div>
               </div>
-              <svg class="testimonial-quote-bg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
             </div>
           </div>
         </div>
 
-        <!-- Pill Button Centered Below -->
-        <div class="text-center pt-32" data-animate="fade-up">
-          <a href="#reviews" class="btn btn-pill-outline-white">
+        <!-- Action Button Centered Below -->
+        <div class="testimonials-action-wrap text-center" data-animate="fade-up">
+          <a href="#reviews" class="btn-testimonials-action">
             <span>See All Testimonials</span>
-            <svg class="icon icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
-      <!-- Soft Gradient Transition to White -->
-      <div class="testimonials-fade-bottom" aria-hidden="true"></div>
     </section>
 
     <!-- SECTION 3.14: FAQ -->

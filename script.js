@@ -410,21 +410,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCardClasses() {
       const visibleCount = getVisibleCount();
       cards.forEach((card, idx) => {
-        if (visibleCount === 3) {
-          // Center card is highlighted, outer cards get .is-outer
-          const isCenter = idx === currentIndex + 1;
-          const isLeft = idx === currentIndex;
-          const isRight = idx === currentIndex + 2;
-
-          if (isCenter) {
-            card.classList.remove('is-outer');
-          } else if (isLeft || isRight) {
-            card.classList.add('is-outer');
-          } else {
-            card.classList.add('is-outer');
-          }
-        } else {
+        const inView = idx >= currentIndex && idx < currentIndex + visibleCount;
+        if (inView) {
           card.classList.remove('is-outer');
+        } else {
+          card.classList.add('is-outer');
         }
       });
     }
